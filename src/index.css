@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+  }
+
+  .post1 {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .post3 {
+    font-family: "Lucida Console", Courier, monospace;
+  }
+
+  .overallheader {
+    grid-area: header;
+    background-color: lightblue;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+  }
+
+  .container{
+      width:auto;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-areas: 
+      'header header header' 
+      'main main  nav' 
+      'footer footer footer';
+  }
+
+  .main{
+    grid-area: main;
+    background-color: bisque;
+    justify-content: center;
+  }
+
+  .nav{
+    grid-area: nav;
+  }
+
+  .footer{
+    grid-area:footer;
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .blog{
+    max-width: 1000px;
+    width:90%;
+    margin: auto;
+    padding:10px;
+  }
+
+  .nav{
+    text-align: center;
+    background-color: pink;
+    padding: 20px;
+    font-size: xx-large;
+    font-weight: bold;
+  }
+
+  a:link, a:visited{
+    color:green;
+    text-decoration:none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .text{
+    font-style:italic;
+  }
+
+   .body, .date{
+     font-size: 20px;
+   }
+
+   .thridPartyApi {
+     max-width: 200px;
+   }
+
+   .APIcontent{
+     align-content: left;
+     height: auto;
+     word-break: break-word;
+     color:darkviolet;
+   }
+
+   .APIcontent h3{
+      color: black
+   }
+
+    .source_name{
+      text-decoration: underline;
+   }
