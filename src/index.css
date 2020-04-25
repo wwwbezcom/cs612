@@ -84,11 +84,13 @@
 
    .thridPartyApi {
      max-width: 200px;
+     font-size: 15px;
    }
 
    .APIcontent{
      align-content: left;
      height: auto;
+     font-size: 15px;
      word-break: break-word;
      color:darkviolet;
    }

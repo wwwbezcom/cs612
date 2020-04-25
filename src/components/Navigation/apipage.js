@@ -24,12 +24,13 @@ class Apipage extends Component {
     render() {
         // setInterval(this.getAPI,5000);
         this.getAPI();
-        return (
-            <div className="thridPartyApi">
+        if (this.state.articles){
+            return (
+                <div className="thridPartyApi">
                     {this.state.articles.map((article)=>{
 
                         var d = new Date(article.publishedAt)
-
+                        
                         return <div className="APIcontent" key={article.url}>
                                     <h3>{article.title}</h3>
                                     <p><strong>{article.description}</strong></p>
@@ -40,7 +41,12 @@ class Apipage extends Component {
                                 </div>
                         })}
                 </div>
-        );
+            );
+        } else {
+            return (
+                <div className="thridPartyApi">API http request denied possibly because of reach request limitation</div>
+            )
+        }
     }  
 }
 
