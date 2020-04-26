@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
-const API_URL = 'https://newsapi.org/v2/top-headlines?country=us&pageSize=6&apiKey=acb9b87ad5934ff4ac8f4bac448cc509';
+const API_KEY = 'bbaa5b3d1a634fe38beca404c864ff89';
+const country ='us';
+
+const API_URL = `https://newsapi.org/v2/top-headlines?country=${country}&pageSize=6&apiKey=${API_KEY}`;
 
 class Apipage extends Component {
 
@@ -22,8 +25,7 @@ class Apipage extends Component {
     
 
     render() {
-        // setInterval(this.getAPI,5000);
-        this.getAPI();
+        setInterval(this.getAPI,15000);
         if (this.state.articles){
             return (
                 <div className="thridPartyApi">
@@ -33,18 +35,18 @@ class Apipage extends Component {
                         
                         return <div className="APIcontent" key={article.url}>
                                     <h3>{article.title}</h3>
-                                    <p><strong>{article.description}</strong></p>
+                                    <p className="source_des"><strong>{article.description}</strong></p>
                                     <p className="source_name">{article.source.name}</p>
                                     <p>{d.toLocaleDateString()}</p>
-                                    <p>{article.content}</p>
-                                    <p>{article.url}</p>
+                                    <p className="source_content">{article.content}</p>
+                                    <p className="source_url"><a target="_blank" href={article.url}>{article.url}</a></p>
                                 </div>
                         })}
                 </div>
             );
         } else {
             return (
-                <div className="thridPartyApi">API http request denied possibly because of reach request limitation</div>
+                <div className="thridPartyApi">API http request denied possibly because of reaching request limitation</div>
             )
         }
     }  
